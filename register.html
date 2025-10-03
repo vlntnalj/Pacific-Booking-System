@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Pacific Hotel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-background">
+            <img src="https://images.unsplash.com/photo-1683395785493-64f96e7fdaee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBob3RlbCUyMG9jZWFuJTIwdmlld3xlbnwxfHx8fDE3NTk1MzA4NjN8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Pacific Hotel">
+            <div class="auth-overlay"></div>
+        </div>
+        
+        <div class="auth-content">
+            <div class="auth-form">
+                <div class="auth-header">
+                    <h1 class="logo">🌊 Pacific Hotel</h1>
+                    <h2 data-en="Create Account" data-es="Crear Cuenta">Crear Cuenta</h2>
+                    <p data-en="Join us for an unforgettable ocean experience" data-es="Únete a nosotros para una experiencia oceánica inolvidable">
+                        Únete a nosotros para una experiencia oceánica inolvidable
+                    </p>
+                </div>
+                
+                <form id="registerForm" class="form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-en="First Name" data-es="Nombre">Nombre</label>
+                            <input type="text" id="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-en="Last Name" data-es="Apellido">Apellido</label>
+                            <input type="text" id="lastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label data-en="Email Address" data-es="Correo Electrónico">Correo Electrónico</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label data-en="Phone Number" data-es="Número de Teléfono">Número de Teléfono</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-en="Password" data-es="Contraseña">Contraseña</label>
+                            <input type="password" id="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-en="Confirm Password" data-es="Confirmar Contraseña">Confirmar Contraseña</label>
+                            <input type="password" id="confirmPassword" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label data-en="Country" data-es="País">País</label>
+                        <select id="country" required>
+                            <option value="" data-en="Select Country" data-es="Seleccionar País">Seleccionar País</option>
+                            <option value="CL" data-en="Chile" data-es="Chile">Chile</option>
+                            <option value="AR" data-en="Argentina" data-es="Argentina">Argentina</option>
+                            <option value="PE" data-en="Peru" data-es="Perú">Perú</option>
+                            <option value="BR" data-en="Brazil" data-es="Brasil">Brasil</option>
+                            <option value="US" data-en="United States" data-es="Estados Unidos">Estados Unidos</option>
+                            <option value="CA" data-en="Canada" data-es="Canadá">Canadá</option>
+                            <option value="ES" data-en="Spain" data-es="España">España</option>
+                            <option value="FR" data-en="France" data-es="Francia">Francia</option>
+                            <option value="DE" data-en="Germany" data-es="Alemania">Alemania</option>
+                            <option value="other" data-en="Other" data-es="Otro">Otro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="newsletter" checked>
+                            <span class="checkmark"></span>
+                            <span data-en="Subscribe to our newsletter for exclusive offers" data-es="Suscribirse a nuestro boletín para ofertas exclusivas">
+                                Suscribirse a nuestro boletín para ofertas exclusivas
+                            </span>
+                        </label>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="terms" required>
+                            <span class="checkmark"></span>
+                            <span>
+                                <span data-en="I agree to the" data-es="Acepto los">Acepto los</span>
+                                <a href="#" data-en="Terms and Conditions" data-es="Términos y Condiciones">Términos y Condiciones</a>
+                                <span data-en="and" data-es="y">y</span>
+                                <a href="#" data-en="Privacy Policy" data-es="Política de Privacidad">Política de Privacidad</a>
+                            </span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-large" data-en="Create Account" data-es="Crear Cuenta">
+                        Crear Cuenta
+                    </button>
+                    
+                    <div class="auth-links">
+                        <p>
+                            <span data-en="Already have an account?" data-es="¿Ya tienes cuenta?">¿Ya tienes cuenta?</span>
+                            <a href="index.html" onclick="showLoginModal(); return false;" data-en="Login here" data-es="Inicia sesión aquí">Inicia sesión aquí</a>
+                        </p>
+                        <p>
+                            <a href="index.html" data-en="← Back to Home" data-es="← Volver al Inicio">← Volver al Inicio</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="language-switcher-auth">
+                <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">
+                    <span id="currentLang">ES</span>
+                    <svg class="lang-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        .auth-container {
+            min-height: 100vh;
+            display: flex;
+            position: relative;
+        }
+        
+        .auth-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+        
+        .auth-background img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .auth-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(8, 47, 73, 0.8), rgba(2, 132, 199, 0.6));
+            z-index: -1;
+        }
+        
+        .auth-content {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .auth-form {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .auth-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .auth-header .logo {
+            color: var(--pacific-blue-700);
+            margin-bottom: 1rem;
+        }
+        
+        .auth-header h2 {
+            color: var(--pacific-blue-800);
+            margin-bottom: 0.5rem;
+        }
+        
+        .auth-header p {
+            color: var(--muted-foreground);
+            margin: 0;
+        }
+        
+        .checkbox-group {
+            margin-bottom: 1rem;
+        }
+        
+        .checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        .checkbox-label input[type="checkbox"] {
+            display: none;
+        }
+        
+        .checkmark {
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--border);
+            border-radius: 3px;
+            position: relative;
+            flex-shrink: 0;
+            margin-top: 2px;
+            transition: var(--transition);
+        }
+        
+        .checkbox-label input[type="checkbox"]:checked + .checkmark {
+            background: var(--pacific-blue-600);
+            border-color: var(--pacific-blue-600);
+        }
+        
+        .checkbox-label input[type="checkbox"]:checked + .checkmark::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .auth-links {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+        
+        .auth-links p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .auth-links a {
+            color: var(--pacific-blue-600);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .auth-links a:hover {
+            color: var(--pacific-blue-700);
+            text-decoration: underline;
+        }
+        
+        .language-switcher-auth {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .auth-content {
+                padding: 1rem;
+            }
+            
+            .auth-form {
+                padding: 1.5rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                const message = currentLanguage === 'es' ? 
+                    'Las contraseñas no coinciden' : 
+                    'Passwords do not match';
+                alert(message);
+                return;
+            }
+            
+            const terms = document.getElementById('terms').checked;
+            if (!terms) {
+                const message = currentLanguage === 'es' ? 
+                    'Debes aceptar los términos y condiciones' : 
+                    'You must accept the terms and conditions';
+                alert(message);
+                return;
+            }
+            
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.innerHTML = '<span class="loading"></span>';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                const message = currentLanguage === 'es' ? 
+                    '¡Cuenta creada exitosamente! Redirigiendo...' : 
+                    'Account created successfully! Redirecting...';
+                alert(message);
+                
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1000);
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
