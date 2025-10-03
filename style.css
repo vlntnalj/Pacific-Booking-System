@@ -1,0 +1,280 @@
+/* Variables de Color */
+:root {
+    --color-primary: #007bff; /* Azul vibrante para botones */
+    --color-secondary: #004d99; /* Azul más oscuro */
+    --color-text-dark: #333;
+    --color-text-light: #fff;
+    --color-bg-light: #f8f9fa;
+    --color-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Reset Básico y Tipografía */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--color-text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text-dark);
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- Botones --- */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-secondary);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+}
+
+.btn-full-width {
+    width: 100%;
+    margin-top: 20px;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    font-size: 1.1rem;
+    padding: 15px 0;
+}
+
+/* --- Barra Superior (Top Bar) --- */
+.top-bar {
+    background-color: var(--color-bg-light);
+    color: #666;
+    font-size: 0.85rem;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info span {
+    margin-right: 20px;
+}
+
+.contact-info i {
+    color: var(--color-primary);
+    margin-right: 5px;
+}
+
+.language-selector select {
+    border: none;
+    background: transparent;
+    font-size: 0.85rem;
+    color: #666;
+    cursor: pointer;
+}
+
+/* --- Barra de Navegación (Navbar) --- */
+.navbar {
+    background-color: var(--color-text-light);
+    box-shadow: 0 2px 4px var(--color-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--color-primary);
+}
+
+.nav-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* --- Sección Hero --- */
+.hero-section {
+    position: relative;
+    height: 75vh;
+    min-height: 500px;
+    background: url('placeholder-hotel-interior.jpg') no-repeat center center/cover; /* Usar una imagen real del hotel */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Capa oscura para mejor contraste del texto */
+}
+
+.hero-content {
+    z-index: 10;
+    color: var(--color-text-light);
+    padding-bottom: 200px; /* Espacio para el formulario que se superpone */
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+/* --- Formulario de Reserva --- */
+.booking-form-container {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%); /* Superponer en el hero y el contenido siguiente */
+    width: 90%;
+    max-width: 1000px;
+    z-index: 20;
+}
+
+.booking-form-card {
+    background-color: var(--color-text-light);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px var(--color-shadow);
+}
+
+.booking-form-card h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas para los 5 campos */
+    gap: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none; /* Quitar estilos por defecto de select */
+    background-color: var(--color-bg-light);
+    font-size: 1rem;
+}
+
+/* Responsive para el formulario */
+@media (max-width: 992px) {
+    .form-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablet */
+    }
+}
+
+@media (max-width: 768px) {
+    .top-bar .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+    .navbar .container {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 15px 20px;
+    }
+    .main-nav {
+        display: none; /* Ocultar nav en móvil o usar un menú hamburguesa */
+    }
+    .nav-actions {
+        margin-left: auto;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .form-grid {
+        grid-template-columns: 1fr; /* 1 columna en móvil */
+    }
+    .booking-form-container {
+        transform: translate(-50%, 0); /* Evitar superposición excesiva en móvil */
+        bottom: -50px; /* Ajuste manual para que se vea */
+    }
+}
