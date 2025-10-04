@@ -19,102 +19,99 @@
       <a href="contacto.html" class="nav-link">Contacto</a>
       <a href="iniciarsesion.html" class="nav-link">Iniciar Sesión</a>
       <a href="reserva.html" class="nav-link">Reserva</a>
-      <a href="pago.html" class="nav-link active">Pago</a>
     </nav>
   </div>
 </header>
 
 <section class="hero">
-  <img src="https://images.unsplash.com/photo-1501117716987-c8e22c3b6b69?auto=format&fit=crop&w=1600&q=80" alt="Pago Pacific Hotel" class="hero-image">
+  <img src="https://images.unsplash.com/photo-1501117716987-c8e5b77a2aa2?auto=format&fit=crop&w=1600&q=80" alt="Pago Pacific Hotel" class="hero-image">
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <h2 class="hero-title">Completa tu Pago</h2>
-    <p class="hero-subtitle">Reserva tu habitación y asegura tu estadía en Pacific Hotel, Viña del Mar.</p>
+    <h2 class="hero-title">Realiza tu Pago</h2>
+    <p class="hero-subtitle">Confirma tu reserva y paga el anticipo de tu estadía.</p>
   </div>
 </section>
 
 <section>
   <div class="container">
     <div style="max-width:600px;margin:3rem auto;background:white;padding:2.5rem;border-radius:var(--radius-lg);box-shadow:0 15px 40px rgba(0,0,0,0.15);">
-      <h3 class="section-title text-center">Resumen de tu Reserva</h3>
 
-      <div class="booking-summary" id="resumenReserva">
-        <!-- Los datos se cargarán con JS -->
+      <h3 class="section-title text-center">Resumen de Reserva</h3>
+      <div id="resumenReserva" class="booking-summary">
+        <!-- Datos cargados con JS -->
       </div>
 
+      <h3 class="section-title text-center" style="margin-top:2rem;">Formulario de Pago</h3>
       <form id="pagoForm">
-        <h3 class="section-title text-center">Datos de Pago</h3>
-        
         <div class="form-group">
           <label for="tarjeta">Número de Tarjeta</label>
-          <input type="text" id="tarjeta" name="tarjeta" placeholder="0000 0000 0000 0000" required>
+          <input type="text" id="tarjeta" placeholder="XXXX-XXXX-XXXX-XXXX" required>
         </div>
-
         <div class="form-row">
           <div class="form-group">
-            <label for="fechaExp">Fecha Expiración</label>
-            <input type="month" id="fechaExp" name="fechaExp" required>
+            <label for="vencimiento">Vencimiento</label>
+            <input type="month" id="vencimiento" required>
           </div>
           <div class="form-group">
             <label for="cvv">CVV</label>
-            <input type="text" id="cvv" name="cvv" placeholder="123" required>
+            <input type="text" id="cvv" placeholder="123" required>
           </div>
         </div>
 
-        <button type="submit" class="btn btn-primary btn-large" style="width:100%;">Pagar Anticipo</button>
+        <button type="submit" class="btn btn-primary btn-large" style="width:100%;margin-top:1rem;">Pagar Anticipo</button>
       </form>
     </div>
   </div>
 </section>
 
-<footer class="footer">
-  <div class="footer-content container">
-    <div class="footer-section">
-      <h3>Pacific Hotel</h3>
-      <p>Av. Marina 123, Viña del Mar, Chile</p>
-      <p>+56 32 123 4567</p>
-      <p>contacto@pacifichotel.cl</p>
+<!-- Modal Confirmación de Pago -->
+<div class="modal" id="modalPago">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Pago Confirmado</h2>
+      <button class="modal-close" id="cerrarPago">&times;</button>
     </div>
-    <div class="footer-section">
-      <h3>Enlaces</h3>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="habitaciones.html">Habitaciones</a></li>
-        <li><a href="servicios.html">Servicios</a></li>
-        <li><a href="restaurante.html">Restaurante</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="iniciarsesion.html">Iniciar Sesión</a></li>
-      </ul>
+    <div class="modal-body text-center">
+      <p>¡Tu anticipo ha sido pagado exitosamente!</p>
+      <p>Gracias por elegir <strong>Pacific Hotel Viña del Mar</strong>.</p>
     </div>
   </div>
-  <div class="footer-bottom">© 2025 Pacific Hotel. Todos los derechos reservados.</div>
-</footer>
+</div>
 
 <script>
-  // Cargar datos de reserva desde sessionStorage
+  // Cargar datos de reserva
   const reserva = JSON.parse(sessionStorage.getItem('reserva'));
-  const resumenDiv = document.getElementById('resumenReserva');
+  const resumen = document.getElementById('resumenReserva');
 
-  if(reserva) {
-    resumenDiv.innerHTML = `
+  if(reserva){
+    resumen.innerHTML = `
       <p><strong>Nombre:</strong> ${reserva.nombre}</p>
       <p><strong>Email:</strong> ${reserva.email}</p>
       <p><strong>Teléfono:</strong> ${reserva.telefono}</p>
       <p><strong>Habitación:</strong> ${reserva.habitacion}</p>
       <p><strong>Check-in:</strong> ${reserva.checkin}</p>
       <p><strong>Check-out:</strong> ${reserva.checkout}</p>
-      <p><strong>Total Reserva:</strong> ${reserva.total}</p>
-      <p><strong>Anticipo (30%):</strong> ${reserva.anticipo}</p>
+      <p><strong>Total Reserva:</strong> ${reserva.total} CLP</p>
+      <p><strong>Anticipo (30%):</strong> ${reserva.anticipo} CLP</p>
     `;
   } else {
-    resumenDiv.innerHTML = `<p>No se encontraron datos de reserva. <a href="reserva.html">Volver a reservar</a></p>`;
+    resumen.innerHTML = `<p>No hay reserva pendiente. <a href="reserva.html">Haz tu reserva aquí</a>.</p>`;
   }
 
-  document.getElementById('pagoForm').addEventListener('submit', function(e){
+  // Modal de Pago
+  const pagoForm = document.getElementById('pagoForm');
+  const modalPago = document.getElementById('modalPago');
+  const cerrarPago = document.getElementById('cerrarPago');
+
+  pagoForm.addEventListener('submit', function(e){
     e.preventDefault();
-    alert('Pago realizado con éxito! Gracias por tu reserva.');
-    sessionStorage.removeItem('reserva'); // Limpiar la reserva
-    window.location.href = "index.html"; // Redirige a inicio
+    modalPago.classList.add('show');
+  });
+
+  cerrarPago.addEventListener('click', function(){
+    modalPago.classList.remove('show');
+    // Limpiar sessionStorage después del pago
+    sessionStorage.removeItem('reserva');
   });
 </script>
 
