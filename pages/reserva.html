@@ -1,49 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reserva - Pacific Hotel</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva - Pacific Hotel | Viña del Mar</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="header">
-    <nav class="nav">
-      <h1 class="logo">🌊 Pacific Hotel</h1>
-      <div class="nav-menu">
+<header>
+    <nav>
         <a href="index.html">Inicio</a>
         <a href="habitaciones.html">Habitaciones</a>
-        <a href="amenidades.html">Amenidades</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="restaurante.html">Restaurante</a>
         <a href="contacto.html">Contacto</a>
-      </div>
     </nav>
-  </header>
+</header>
 
-  <main class="container">
-    <h2>Reserva tu estadía</h2>
-    <form action="reserva.php" method="POST" class="booking-form">
-      <label>Nombre completo:</label>
-      <input type="text" name="cliente" required>
+<section class="hero">
+    <h1>Reserva Tu Estadía</h1>
+    <p>Selecciona tus fechas y habitación para disfrutar de tu estadía perfecta</p>
+</section>
 
-      <label>Tipo de habitación:</label>
-      <select name="habitacion">
-        <option value="standard">Estándar</option>
-        <option value="premium">Premium</option>
-        <option value="suite">Suite Vista al Océano</option>
-      </select>
+<section class="booking-form">
+    <form>
+        <label>Nombre Completo</label>
+        <input type="text" required>
 
-      <label>Fecha de entrada:</label>
-      <input type="date" name="fechaInicio" required>
+        <label>Email</label>
+        <input type="email" required>
 
-      <label>Fecha de salida:</label>
-      <input type="date" name="fechaFin" required>
+        <label>Fecha de Entrada</label>
+        <input type="date" required>
 
-      <button type="submit" class="btn btn-primary">Confirmar Reserva</button>
+        <label>Fecha de Salida</label>
+        <input type="date" required>
+
+        <label>Habitación</label>
+        <select required>
+            <option value="">Seleccionar Habitación</option>
+            <option value="standard">Habitación Estándar</option>
+            <option value="premium">Habitación Premium</option>
+            <option value="suite">Ocean View Suite</option>
+        </select>
+
+        <label>Huéspedes</label>
+        <input type="number" min="1" max="4" required>
+
+        <button type="submit">Confirmar Reserva</button>
     </form>
-  </main>
+</section>
 
-  <footer class="footer">
-    <p>&copy; 2025 Pacific Hotel. Todos los derechos reservados.</p>
-  </footer>
+<footer>
+    <p>&copy; 2024 Pacific Hotel, Viña del Mar. Todos los derechos reservados.</p>
+</footer>
 </body>
 </html>
