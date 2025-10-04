@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Admin - Pacific Hotel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="nav-container">
+    <h1 class="logo">Pacific Hotel - Admin</h1>
+  </div>
+</header>
+
+<!-- Login Section -->
+<section class="hero" style="height: 70vh;">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h2 class="hero-title">Inicio de Sesión Administrador</h2>
+    <p class="hero-subtitle">Ingresa tus credenciales para acceder al panel de control.</p>
+    <form id="adminLogin" style="background:white;padding:2rem;border-radius:var(--radius-lg);box-shadow:0 15px 40px rgba(0,0,0,0.15);max-width:400px;margin:2rem auto;">
+      <div class="form-group">
+        <label for="adminUser">Usuario</label>
+        <input type="text" id="adminUser" placeholder="admin" required>
+      </div>
+      <div class="form-group">
+        <label for="adminPass">Contraseña</label>
+        <input type="password" id="adminPass" placeholder="********" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-large" style="width:100%;">Ingresar</button>
+    </form>
+  </div>
+</section>
+
+<!-- Admin Dashboard -->
+<section id="adminPanel" style="display:none;padding-top:100px;">
+  <div class="container">
+    <h2 class="section-title text-center" style="margin-bottom:2rem;">Panel de Administración</h2>
+
+    <!-- Tabs -->
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem;justify-content:center;">
+      <button class="btn btn-outline" onclick="showTab('reservasTab')">Reservas</button>
+      <button class="btn btn-outline" onclick="showTab('pagosTab')">Pagos</button>
+      <button class="btn btn-outline" onclick="showTab('estadisticasTab')">Estadísticas</button>
+    </div>
+
+    <!-- Reservas Tab -->
+    <div id="reservasTab" class="admin-tab">
+      <h3 style="margin-bottom:1rem;color:var(--pacific-blue-700)">Reservas</h3>
+      <table style="width:100%;border-collapse:collapse;">
+        <thead>
+          <tr style="background:var(--pacific-blue-200);color:var(--pacific-blue-900);">
+            <th style="padding:0.75rem;border:1px solid var(--border)">ID</th>
+            <th style="padding:0.75rem;border:1px solid var(--border)">Cliente</th>
+            <th style="padding:0.75rem;border:1px solid var(--border)">Habitación</th>
+            <th style="padding:0.75rem;border:1px solid var(--border)">Fecha</th>
+            <th style="padding:0.75rem;border:1px solid var(--border)">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:0.5rem;border:1px solid var(--border)">1</td>
+            <td style="padding:0.5rem;border:1px solid var(--border)">Juan Pérez</td>
+            <td style="padding:0.5rem;border:1px solid var(--border)">Suite Ocean View</td>
+            <td style="padding:0.5rem;border:1px solid var(--border)">2025-11-10</td>
+            <td style="padding:0.5rem;border:1px solid var(--border)">
+              <button class="btn btn-primary btn-small" onclick="openModal('editReservaModal')">Editar</button>
+              <button class="btn btn-outline btn-small" onclick="alert('Reserva eliminada (simulado)')">Eliminar</button>
+            </td>
+          </tr>
+          <!-- Más reservas simuladas -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pagos Tab -->
+    <div id="pagosTab" class="admin-tab" style="display:none;">
+      <h3 style="margin-bottom:1rem;color:var(--pacific-blue-700)">Pagos</h3>
+      <table style="width:100%;border-collapse:collapse;">
+        <thead>
+          <tr style="background:var(--ocean-teal-200);color:var(--ocean-teal-900);">
+            <th style="padding:0.75rem;border:1px solid var(--border)">ID</th>
+            <th style="padding:0.75rem;border:1px solid var(--border)">Cliente</th>
+            <th style="padding:0.75rem;border:1px solid var(--border)">Monto</th>
+            <th style="padding:0.75rem;border:1px solid var(--border)">Estado</th>
+            <th style="padding:0.75rem;border:1px solid var(--border)">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:0.5rem;border:1px solid var(--border)">1</td>
+            <td style="padding:0.5rem;border:1px solid var(--border)">Juan Pérez</td>
+            <td style="padding:0.5rem;border:1px solid var(--border)">$120.000</td>
+            <td style="padding:0.5rem;border:1px solid var(--border)">Pagado</td>
+            <td style="padding:0.5rem;border:1px solid var(--border)">
+              <button class="btn btn-primary btn-small" onclick="alert('Editar pago (simulado)')">Editar</button>
+            </td>
+          </tr>
+          <!-- Más pagos simulados -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Estadísticas Tab -->
+    <div id="estadisticasTab" class="admin-tab" style="display:none;">
+      <h3 style="margin-bottom:1rem;color:var(--pacific-blue-700)">Estadísticas</h3>
+      <p>Aquí puedes integrar gráficos de ocupación y reportes (simulados).</p>
+      <div style="background:var(--muted);padding:2rem;border-radius:var(--radius-lg);text-align:center;">
+        <p>Gráfico de ocupación de habitaciones y pagos (simulado)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Edit Reservation Modal -->
+<div id="editReservaModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Editar Reserva</h2>
+      <button class="modal-close" onclick="closeModal('editReservaModal')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label>Cliente</label>
+          <input type="text" value="Juan Pérez">
+        </div>
+        <div class="form-group">
+          <label>Habitación</label>
+          <input type="text" value="Suite Ocean View">
+        </div>
+        <div class="form-group">
+          <label>Fecha</label>
+          <input type="date" value="2025-11-10">
+        </div>
+        <button class="btn btn-primary btn-large" type="button" onclick="alert('Reserva actualizada (simulado)')">Guardar Cambios</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Login
+  const adminLogin = document.getElementById('adminLogin');
+  const adminPanel = document.getElementById('adminPanel');
+
+  adminLogin.addEventListener('submit', function(e){
+    e.preventDefault();
+    const user = document.getElementById('adminUser').value;
+    const pass = document.getElementById('adminPass').value;
+
+    if(user === 'admin' && pass === 'admin123'){
+      alert('Bienvenido Administrador');
+      adminLogin.parentElement.style.display = 'none';
+      adminPanel.style.display = 'block';
+      window.scrollTo(0,0);
+    } else {
+      alert('Usuario o contraseña incorrectos');
+    }
+  });
+
+  // Tabs
+  function showTab(tabId){
+    const tabs = document.querySelectorAll('.admin-tab');
+    tabs.forEach(tab => tab.style.display = 'none');
+    document.getElementById(tabId).style.display = 'block';
+  }
+
+  // Modals
+  function openModal(id){
+    document.getElementById(id).classList.add('show');
+  }
+
+  function closeModal(id){
+    document.getElementById(id).classList.remove('show');
+  }
+</script>
+
+</body>
+</html>
