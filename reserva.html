@@ -1,58 +1,161 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reserva - Pacific Hotel | Viña del Mar</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserva - Pacific Hotel Viña del Mar</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="habitaciones.html">Habitaciones</a>
-        <a href="servicios.html">Servicios</a>
-        <a href="restaurante.html">Restaurante</a>
-        <a href="contacto.html">Contacto</a>
+
+<header class="header">
+  <div class="nav-container">
+    <h1 class="logo">Pacific Hotel</h1>
+    <nav class="nav-menu">
+      <a href="index.html" class="nav-link">Inicio</a>
+      <a href="habitaciones.html" class="nav-link">Habitaciones</a>
+      <a href="servicios.html" class="nav-link">Servicios</a>
+      <a href="restaurante.html" class="nav-link">Restaurante</a>
+      <a href="contacto.html" class="nav-link">Contacto</a>
+      <a href="iniciarsesion.html" class="nav-link">Iniciar Sesión</a>
+      <a href="reserva.html" class="nav-link">Reserva</a>
     </nav>
+  </div>
 </header>
 
-<section class="hero">
-    <h1>Reserva Tu Estadía</h1>
-    <p>Selecciona tus fechas y habitación para disfrutar de tu estadía perfecta</p>
+<section class="hero" style="height:70vh;">
+  <img src="https://images.unsplash.com/photo-1560347876-aeef00ee58a1?auto=format&fit=crop&w=1600&q=80" alt="Hotel Reservation" class="hero-image">
+  <div class="hero-overlay" style="background: rgba(0,0,0,0.6);"></div>
+  <div class="hero-content" style="max-width:600px;">
+    <h2 class="hero-title">Reserva tu Estancia</h2>
+    <p class="hero-subtitle">Completa tus datos para reservar tu habitación en Pacific Hotel, Viña del Mar.</p>
+  </div>
 </section>
 
-<section class="booking-form">
-    <form>
-        <label>Nombre Completo</label>
-        <input type="text" required>
+<section style="padding:4rem 1rem;">
+  <div class="container">
+    <form id="reservaForm" style="background:white;padding:2rem;border-radius:var(--radius-lg);box-shadow:0 10px 25px rgba(0,0,0,0.15);">
+      <h3 class="section-title text-center">Formulario de Reserva</h3>
 
-        <label>Email</label>
-        <input type="email" required>
+      <div class="form-group">
+        <label for="nombre">Nombre Completo</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+      </div>
 
-        <label>Fecha de Entrada</label>
-        <input type="date" required>
+      <div class="form-group">
+        <label for="email">Correo Electrónico</label>
+        <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+      </div>
 
-        <label>Fecha de Salida</label>
-        <input type="date" required>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="+56 9 1234 5678" required>
+        </div>
+        <div class="form-group">
+          <label for="habitacion">Habitación</label>
+          <select id="habitacion" name="habitacion" required>
+            <option value="">Selecciona</option>
+            <option value="single">Single - $50.000</option>
+            <option value="double">Doble - $80.000</option>
+            <option value="suite">Suite - $120.000</option>
+          </select>
+        </div>
+      </div>
 
-        <label>Habitación</label>
-        <select required>
-            <option value="">Seleccionar Habitación</option>
-            <option value="standard">Habitación Estándar</option>
-            <option value="premium">Habitación Premium</option>
-            <option value="suite">Ocean View Suite</option>
-        </select>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="checkin">Fecha de Entrada</label>
+          <input type="date" id="checkin" name="checkin" required>
+        </div>
+        <div class="form-group">
+          <label for="checkout">Fecha de Salida</label>
+          <input type="date" id="checkout" name="checkout" required>
+        </div>
+      </div>
 
-        <label>Huéspedes</label>
-        <input type="number" min="1" max="4" required>
+      <div class="form-group">
+        <label for="total">Total de Reserva</label>
+        <input type="text" id="total" name="total" value="$0" readonly>
+      </div>
 
-        <button type="submit">Confirmar Reserva</button>
+      <div class="form-group">
+        <label for="anticipo">Anticipo (30%)</label>
+        <input type="text" id="anticipo" name="anticipo" value="$0" readonly>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-large" style="width:100%;">Confirmar Reserva</button>
     </form>
+  </div>
 </section>
 
-<footer>
-    <p>&copy; 2024 Pacific Hotel, Viña del Mar. Todos los derechos reservados.</p>
+<footer class="footer">
+  <div class="footer-content container">
+    <div class="footer-section">
+      <h3>Pacific Hotel</h3>
+      <p>Av. Marina 123, Viña del Mar, Chile</p>
+      <p>+56 32 123 4567</p>
+      <p>contacto@pacifichotel.cl</p>
+    </div>
+    <div class="footer-section">
+      <h3>Enlaces</h3>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="habitaciones.html">Habitaciones</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="restaurante.html">Restaurante</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="iniciarsesion.html">Iniciar Sesión</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 Pacific Hotel. Todos los derechos reservados.</div>
 </footer>
+
+<script>
+  const habitacion = document.getElementById('habitacion');
+  const totalInput = document.getElementById('total');
+  const anticipoInput = document.getElementById('anticipo');
+
+  const precios = {
+    single: 50000,
+    double: 80000,
+    suite: 120000
+  };
+
+  habitacion.addEventListener('change', calcularTotal);
+  document.getElementById('checkin').addEventListener('change', calcularTotal);
+  document.getElementById('checkout').addEventListener('change', calcularTotal);
+
+  function calcularTotal() {
+    const tipo = habitacion.value;
+    const checkin = new Date(document.getElementById('checkin').value);
+    const checkout = new Date(document.getElementById('checkout').value);
+
+    if (!tipo || isNaN(checkin) || isNaN(checkout) || checkout <= checkin) {
+      totalInput.value = "$0";
+      anticipoInput.value = "$0";
+      return;
+    }
+
+    const diffTime = Math.abs(checkout - checkin);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+    const total = precios[tipo] * diffDays;
+    const anticipo = total * 0.3;
+
+    totalInput.value = "$" + total.toLocaleString('es-CL');
+    anticipoInput.value = "$" + anticipo.toLocaleString('es-CL');
+  }
+
+  document.getElementById('reservaForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Reserva confirmada! El anticipo del 30% se cobrará al realizar el pago.');
+    this.reset();
+    totalInput.value = "$0";
+    anticipoInput.value = "$0";
+  });
+</script>
+
 </body>
 </html>
