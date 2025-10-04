@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacific Hotel - Hotel de Lujo Frente al Océano | Chile</title>
+    <meta name="description" content="Experimenta el lujo frente al océano en Pacific Hotel, Chile. Reserva tu habitación con vista al mar y disfruta de nuestros servicios de clase mundial.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h1 class="logo">🌊 Pacific Hotel</h1>
+                </div>
+                
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="habitaciones.html" class="nav-link">Habitaciones</a>
+                    <a href="servicios.html" class="nav-link">Servicios</a>
+                    <a href="contacto.html" class="nav-link">Contacto</a>
+                    <button class="btn btn-primary" onclick="window.location.href='reserva.html'">Reservar Ahora</button>
+                </div>
+
+                <div class="nav-actions">
+                    <div class="language-switcher">
+                        <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">
+                            <span id="currentLang">ES</span>
+                            <svg class="lang-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <button class="btn btn-outline" onclick="window.location.href='iniciarsesion.html'">Iniciar Sesión</button>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="https://images.unsplash.com/photo-1683395785493-64f96e7fdaee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080" alt="Pacific Hotel Ocean View" class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    El Lujo se Encuentra con el Océano Pacífico
+                </h1>
+                <p class="hero-subtitle">
+                    Experimenta elegancia sin igual con impresionantes vistas al océano en el destino costero premier de Chile
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-large" onclick="window.location.href='reserva.html'">
+                        Reserva tu Estadía
+                    </button>
+                    <button class="btn btn-outline btn-large" onclick="window.location.href='habitaciones.html'">
+                        Explorar Habitaciones
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ocean Wave Animation -->
+        <div class="ocean-waves">
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section id="rooms" class="rooms-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Alojamientos de Lujo</h2>
+                <p class="section-subtitle">Cada habitación ofrece impresionantes vistas al océano y servicios de clase mundial</p>
+            </div>
+
+            <div class="rooms-grid">
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="https://images.unsplash.com/photo-1590490359854-dfba19688d70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080" alt="Ocean View Suite">
+                        <div class="room-price">$299<span>/noche</span></div>
+                    </div>
+                    <div class="room-content">
+                        <h3 class="room-name">Suite Vista al Océano</h3>
+                        <p class="room-description">Suite espaciosa con vistas panorámicas al océano, cama king y balcón privado</p>
+                        <div class="room-features">
+                            <span class="feature">🏖️ Vista al Océano</span>
+                            <span class="feature">🛏️ Cama King</span>
+                            <span class="feature">🌅 Balcón Privado</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="window.location.href='reserva.html'">
+                            Seleccionar Habitación
+                        </button>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="https://images.unsplash.com/photo-1590490359854-dfba19688d70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080" alt="Premium Room">
+                        <div class="room-price">$199<span>/noche</span></div>
+                    </div>
+                    <div class="room-content">
+                        <h3 class="room-name">Habitación Premium</h3>
+                        <p class="room-description">Habitación elegante con vista parcial al océano, cama queen y servicios modernos</p>
+                        <div class="room-features">
+                            <span class="feature">🌊 Vista Parcial al Océano</span>
+                            <span class="feature">🛏️ Cama Queen</span>
+                            <span class="feature">📺 TV Inteligente</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="window.location.href='reserva.html'">
+                            Seleccionar Habitación
+                        </button>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="https://images.unsplash.com/photo-1590490359854-dfba19688d70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080" alt="Standard Room">
+                        <div class="room-price">$149<span>/noche</span></div>
+                    </div>
+                    <div class="room-content">
+                        <h3 class="room-name">Habitación Estándar</h3>
+                        <p class="room-description">Habitación cómoda con vista al jardín, cama doble y servicios esenciales</p>
+                        <div class="room-features">
+                            <span class="feature">🌳 Vista al Jardín</span>
+                            <span class="feature">🛏️ Cama Doble</span>
+                            <span class="feature">☕ Cafetera</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="window.location.href='reserva.html'">
+                            Seleccionar Habitación
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Servicios de Clase Mundial</h2>
+                <p class="section-subtitle">Disfruta del lujo con nuestros servicios e instalaciones excepcionales</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1588944915990-b8d1f0991b11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080" alt="Piscina Infinita">
+                    </div>
+                    <div class="service-content">
+                        <h3>Piscina Infinita y Spa</h3>
+                        <p>Relájate en nuestra impresionante piscina infinita con vista al Océano Pacífico</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3>Restaurante Gourmet</h3>
+                        <p>Saborea cocina exquisita con mariscos frescos y especialidades locales</p>
+                        <a href="restaurante.html" class="btn btn-outline">Ver Restaurante</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3>Acceso a Playa Privada</h3>
+                        <p>Disfruta acceso exclusivo a nuestra playa privada prístina</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3>Centro de Fitness</h3>
+                        <p>Equipos de última generación con vistas panorámicas al océano</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Contáctanos</h2>
+                    <div class="contact-item">
+                        <strong>Dirección:</strong>
+                        <span>Av. Costanera del Pacífico 1234, Viña del Mar, Chile</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Teléfono:</strong>
+                        <span>+56 32 123 4567</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Email:</strong>
+                        <span>info@pacifichotel.cl</span>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Mensaje" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌊 Pacific Hotel</h3>
+                    <p>El lujo se encuentra con el Océano Pacífico en el destino costero premier de Chile.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="habitaciones.html">Habitaciones</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="restaurante.html">Restaurante</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Información de Contacto</h4>
+                    <p>Av. Costanera del Pacífico 1234<br>Viña del Mar, Chile</p>
+                    <p>+56 32 123 4567</p>
+                    <p>info@pacifichotel.cl</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Pacific Hotel. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
