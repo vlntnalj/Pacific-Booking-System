@@ -1,55 +1,106 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios - Pacific Hotel | Viña del Mar</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios - Pacific Hotel Viña del Mar</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="habitaciones.html">Habitaciones</a>
-        <a href="servicios.html">Servicios</a>
-        <a href="restaurante.html">Restaurante</a>
-        <a href="contacto.html">Contacto</a>
+
+<header class="header">
+  <div class="nav-container">
+    <h1 class="logo">Pacific Hotel</h1>
+    <nav class="nav-menu">
+      <a href="index.html" class="nav-link">Inicio</a>
+      <a href="habitaciones.html" class="nav-link">Habitaciones</a>
+      <a href="servicios.html" class="nav-link">Servicios</a>
+      <a href="restaurante.html" class="nav-link">Restaurante</a>
+      <a href="contacto.html" class="nav-link">Contacto</a>
     </nav>
+  </div>
 </header>
 
 <section class="hero">
-    <h1>Servicios de Clase Mundial</h1>
-    <p>Experimenta lujo y confort con nuestras instalaciones excepcionales</p>
+  <img src="https://images.unsplash.com/photo-1576675783745-3e121df89d34?auto=format&fit=crop&w=1600&q=80" alt="Servicios hotel" class="hero-image">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h2 class="hero-title">Servicios de Primera Clase</h2>
+    <p class="hero-subtitle">Confort, lujo y atención personalizada para que tu estancia en Viña del Mar sea inolvidable.</p>
+    <a href="reserva.html" class="btn btn-primary btn-large">Reserva Hoy</a>
+  </div>
 </section>
 
-<section class="services-grid">
-    <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1588944915990-b8d1f0991b11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080" alt="Piscina Infinita">
-        <h2>Piscina Infinita y Spa</h2>
-        <p>Relájate mientras disfrutas de la vista al océano y servicios de spa premium.</p>
+<section class="container">
+  <div class="section-header">
+    <h2 class="section-title">Nuestros Servicios</h2>
+    <p class="section-subtitle">Ofrecemos servicios exclusivos para tu comodidad y disfrute durante tu estancia.</p>
+  </div>
+
+  <div class="amenities-grid">
+    <div class="amenity-card">
+      <div class="amenity-image">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Spa">
+      </div>
+      <div class="amenity-content">
+        <h3>Spa & Bienestar</h3>
+        <p>Relájate con masajes, sauna y tratamientos de lujo para cuerpo y mente.</p>
+      </div>
     </div>
 
-    <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1562184559-2e3b6e6b1b03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080" alt="Centro de Fitness">
-        <h2>Centro de Fitness</h2>
-        <p>Equipos modernos con vistas panorámicas al océano para mantener tu rutina.</p>
+    <div class="amenity-card">
+      <div class="amenity-image">
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" alt="Piscina">
+      </div>
+      <div class="amenity-content">
+        <h3>Piscina Infinity</h3>
+        <p>Disfruta de nuestra piscina con vista panorámica al mar, perfecta para relajarte y tomar el sol.</p>
+      </div>
     </div>
 
-    <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1506086679525-62b3a9c9f4ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080" alt="Playa Privada">
-        <h2>Acceso a Playa Privada</h2>
-        <p>Disfruta de un acceso exclusivo a nuestra playa privada prístina.</p>
+    <div class="amenity-card">
+      <div class="amenity-image">
+        <img src="https://images.unsplash.com/photo-1603206907801-0c1dd2b1ec45?auto=format&fit=crop&w=800&q=80" alt="Gimnasio">
+      </div>
+      <div class="amenity-content">
+        <h3>Gimnasio Moderno</h3>
+        <p>Equipado con maquinaria de última generación y entrenadores personales disponibles.</p>
+      </div>
     </div>
 
-    <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080" alt="Restaurante Gourmet">
-        <h2>Restaurante Gourmet</h2>
-        <p>Cocina de autor con productos frescos y locales. <a href="restaurante.html">Ver más</a></p>
+    <div class="amenity-card">
+      <div class="amenity-image">
+        <img src="https://images.unsplash.com/photo-1584954255026-41a86e1b3c8e?auto=format&fit=crop&w=800&q=80" alt="Servicio a la habitación">
+      </div>
+      <div class="amenity-content">
+        <h3>Servicio a la Habitación 24/7</h3>
+        <p>Disfruta de comidas y bebidas directamente en la comodidad de tu habitación.</p>
+      </div>
     </div>
+  </div>
 </section>
 
-<footer>
-    <p>&copy; 2024 Pacific Hotel, Viña del Mar. Todos los derechos reservados.</p>
+<footer class="footer">
+  <div class="footer-content container">
+    <div class="footer-section">
+      <h3>Pacific Hotel</h3>
+      <p>Av. Marina 123, Viña del Mar, Chile</p>
+      <p>+56 32 123 4567</p>
+      <p>contacto@pacifichotel.cl</p>
+    </div>
+    <div class="footer-section">
+      <h3>Enlaces</h3>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="habitaciones.html">Habitaciones</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="restaurante.html">Restaurante</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 Pacific Hotel. Todos los derechos reservados.</div>
 </footer>
+
 </body>
 </html>
