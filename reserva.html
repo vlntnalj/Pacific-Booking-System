@@ -66,7 +66,7 @@
       <div class="form-row">
         <div class="form-group">
           <label for="checkin">Fecha de Entrada</label>
-          <input type="date" id="checkin" name="checkin" required>
+          <input type="date" id="checkin" name="checkin" min="<?= date('Y-m-d'); ?>" required>
         </div>
         <div class="form-group">
           <label for="checkout">Fecha de Salida</label>
@@ -85,7 +85,7 @@
         </div>
       </div>
 
-      <button type="submit" class="btn btn-primary btn-large" style="width:100%;">Confirmar Reserva</button>
+      <button type="submit" class="btn btn-primary btn-large" style="width:100%;">Ir a Pago</button>
     </form>
   </div>
 </section>
@@ -117,21 +117,19 @@
   const habitacion = document.getElementById('habitacion');
   const totalInput = document.getElementById('total');
   const anticipoInput = document.getElementById('anticipo');
+  const checkinInput = document.getElementById('checkin');
+  const checkoutInput = document.getElementById('checkout');
 
-  const precios = {
-    single: 50000,
-    double: 80000,
-    suite: 120000
-  };
+  const precios = { single: 50000, double: 80000, suite: 120000 };
 
   habitacion.addEventListener('change', calcularTotal);
-  document.getElementById('checkin').addEventListener('change', calcularTotal);
-  document.getElementById('checkout').addEventListener('change', calcularTotal);
+  checkinInput.addEventListener('change', calcularTotal);
+  checkoutInput.addEventListener('change', calcularTotal);
 
   function calcularTotal() {
     const tipo = habitacion.value;
-    const checkin = new Date(document.getElementById('checkin').value);
-    const checkout = new Date(document.getElementById('checkout').value);
+    const checkin = new Date(checkinInput.value);
+    const checkout = new Date(checkoutInput.value);
 
     if (!tipo || isNaN(checkin) || isNaN(checkout) || checkout <= checkin) {
       totalInput.value = "$0";
@@ -139,9 +137,8 @@
       return;
     }
 
-    const diffTime = Math.abs(checkout - checkin);
+    const diffTime = checkout - checkin;
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
     const total = precios[tipo] * diffDays;
     const anticipo = total * 0.3;
 
@@ -151,10 +148,19 @@
 
   document.getElementById('reservaForm').addEventListener('submit', function(e){
     e.preventDefault();
-    alert('Reserva confirmada! El anticipo del 30% se cobrará al realizar el pago.');
-    this.reset();
-    totalInput.value = "$0";
-    anticipoInput.value = "$0";
+    // Guardar datos de reserva en sessionStorage para enviar a pago.html
+    const reservaData = {
+      nombre: document.getElementById('nombre').value,
+      email: document.getElementById('email').value,
+      telefono: document.getElementById('telefono').value,
+      habitacion: habitacion.value,
+      checkin: checkinInput.value,
+      checkout: checkoutInput.value,
+      total: totalInput.value,
+      anticipo: anticipoInput.value
+    };
+    sessionStorage.setItem('reserva', JSON.stringify(reservaData));
+    window.location.href = "pago.html"; // redirige a la página de pago
   });
 </script>
 
