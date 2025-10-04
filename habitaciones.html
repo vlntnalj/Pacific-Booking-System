@@ -1,55 +1,117 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habitaciones - Pacific Hotel | Viña del Mar</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habitaciones - Pacific Hotel Viña del Mar</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="habitaciones.html">Habitaciones</a>
-        <a href="servicios.html">Servicios</a>
-        <a href="restaurante.html">Restaurante</a>
-        <a href="contacto.html">Contacto</a>
+
+<header class="header">
+  <div class="nav-container">
+    <h1 class="logo">Pacific Hotel</h1>
+    <nav class="nav-menu">
+      <a href="index.html" class="nav-link">Inicio</a>
+      <a href="habitaciones.html" class="nav-link">Habitaciones</a>
+      <a href="servicios.html" class="nav-link">Servicios</a>
+      <a href="restaurante.html" class="nav-link">Restaurante</a>
+      <a href="contacto.html" class="nav-link">Contacto</a>
     </nav>
+  </div>
 </header>
 
 <section class="hero">
-    <h1>Habitaciones de Lujo en Pacific Hotel</h1>
-    <p>Disfruta de vistas panorámicas al océano y un confort inigualable</p>
+  <img src="https://images.unsplash.com/photo-1560184897-646b2f2e062e?auto=format&fit=crop&w=1600&q=80" alt="Habitación de lujo" class="hero-image">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h2 class="hero-title">Habitaciones de Lujo con Vista al Mar</h2>
+    <p class="hero-subtitle">Disfruta del confort y la elegancia en cada estancia en Pacific Hotel Viña del Mar.</p>
+    <a href="reserva.html" class="btn btn-primary btn-large">Reservar Ahora</a>
+  </div>
 </section>
 
-<section class="rooms">
+<section class="rooms-section container">
+  <div class="section-header">
+    <h2 class="section-title">Nuestras Habitaciones</h2>
+    <p class="section-subtitle">Habitaciones modernas, amplias y con todas las comodidades que necesitas para una estancia perfecta.</p>
+  </div>
+
+  <div class="rooms-grid">
     <div class="room-card">
-        <img src="https://images.unsplash.com/photo-1590490359854-dfba19688d70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080" alt="Ocean View Suite">
-        <h2>Ocean View Suite</h2>
-        <p>Suite espaciosa con cama king, balcón privado y vista directa al océano.</p>
-        <span>$299 / noche</span>
-        <button onclick="window.location.href='reserva.html'">Reservar Ahora</button>
+      <div class="room-image">
+        <img src="https://images.unsplash.com/photo-1616639651198-2a7c1f7b3142?auto=format&fit=crop&w=800&q=80" alt="Habitación Estándar">
+        <div class="room-price">$120 USD <span>/noche</span></div>
+      </div>
+      <div class="room-content">
+        <h3 class="room-name">Habitación Estándar</h3>
+        <p class="room-description">Cómoda habitación con cama queen, escritorio, wifi y baño privado.</p>
+        <div class="room-features">
+          <span class="feature">🛏 Cama Queen</span>
+          <span class="feature">🌊 Vista al Mar</span>
+          <span class="feature">📶 Wifi Gratis</span>
+        </div>
+        <a href="reserva.html" class="btn btn-outline">Reservar</a>
+      </div>
     </div>
 
     <div class="room-card">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080" alt="Premium Room">
-        <h2>Habitación Premium</h2>
-        <p>Habitación elegante con cama queen y vista parcial al océano.</p>
-        <span>$199 / noche</span>
-        <button onclick="window.location.href='reserva.html'">Reservar Ahora</button>
+      <div class="room-image">
+        <img src="https://images.unsplash.com/photo-1582719478250-8be9f36a26ff?auto=format&fit=crop&w=800&q=80" alt="Habitación Deluxe">
+        <div class="room-price">$200 USD <span>/noche</span></div>
+      </div>
+      <div class="room-content">
+        <h3 class="room-name">Habitación Deluxe</h3>
+        <p class="room-description">Amplia habitación con cama king, terraza y minibar incluido.</p>
+        <div class="room-features">
+          <span class="feature">🛏 Cama King</span>
+          <span class="feature">🌅 Terraza Privada</span>
+          <span class="feature">🍹 Minibar</span>
+        </div>
+        <a href="reserva.html" class="btn btn-outline">Reservar</a>
+      </div>
     </div>
 
     <div class="room-card">
-        <img src="https://images.unsplash.com/photo-1576671086063-cf99c17cbcf0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080" alt="Standard Room">
-        <h2>Habitación Estándar</h2>
-        <p>Habitación acogedora con cama doble y vista al jardín del hotel.</p>
-        <span>$149 / noche</span>
-        <button onclick="window.location.href='reserva.html'">Reservar Ahora</button>
+      <div class="room-image">
+        <img src="https://images.unsplash.com/photo-1601972569917-36b62094cde7?auto=format&fit=crop&w=800&q=80" alt="Suite Ejecutiva">
+        <div class="room-price">$350 USD <span>/noche</span></div>
+      </div>
+      <div class="room-content">
+        <h3 class="room-name">Suite Ejecutiva</h3>
+        <p class="room-description">Suite de lujo con sala de estar, bañera de hidromasaje y vistas panorámicas.</p>
+        <div class="room-features">
+          <span class="feature">🛋 Sala de Estar</span>
+          <span class="feature">🛁 Hidromasaje</span>
+          <span class="feature">🌊 Vista Panorámica</span>
+        </div>
+        <a href="reserva.html" class="btn btn-outline">Reservar</a>
+      </div>
     </div>
+  </div>
 </section>
 
-<footer>
-    <p>&copy; 2024 Pacific Hotel, Viña del Mar. Todos los derechos reservados.</p>
+<footer class="footer">
+  <div class="footer-content container">
+    <div class="footer-section">
+      <h3>Pacific Hotel</h3>
+      <p>Av. Marina 123, Viña del Mar, Chile</p>
+      <p>+56 32 123 4567</p>
+      <p>contacto@pacifichotel.cl</p>
+    </div>
+    <div class="footer-section">
+      <h3>Enlaces</h3>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="habitaciones.html">Habitaciones</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="restaurante.html">Restaurante</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 Pacific Hotel. Todos los derechos reservados.</div>
 </footer>
+
 </body>
 </html>
