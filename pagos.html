@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pagos - Pacific Hotel Viña del Mar</title>
+  <title>Pago - Pacific Hotel Viña del Mar</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,43 +18,52 @@
       <a href="restaurante.html" class="nav-link">Restaurante</a>
       <a href="contacto.html" class="nav-link">Contacto</a>
       <a href="iniciarsesion.html" class="nav-link">Iniciar Sesión</a>
+      <a href="reserva.html" class="nav-link">Reserva</a>
+      <a href="pago.html" class="nav-link active">Pago</a>
     </nav>
   </div>
 </header>
 
-<section class="hero" style="height:70vh;">
-  <img src="https://images.unsplash.com/photo-1582719478179-3c3d94b4f5c7?auto=format&fit=crop&w=1600&q=80" alt="Hotel Payment" class="hero-image">
-  <div class="hero-overlay" style="background: rgba(0,0,0,0.5);"></div>
-  <div class="hero-content" style="max-width:500px;">
-    <h2 class="hero-title">Pago Seguro</h2>
-    <p class="hero-subtitle">Completa tu reserva o servicio con nuestro sistema de pago rápido y confiable.</p>
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1501117716987-c8e22c3b6b69?auto=format&fit=crop&w=1600&q=80" alt="Pago Pacific Hotel" class="hero-image">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h2 class="hero-title">Completa tu Pago</h2>
+    <p class="hero-subtitle">Reserva tu habitación y asegura tu estadía en Pacific Hotel, Viña del Mar.</p>
+  </div>
+</section>
 
-    <form action="index.html" method="post" style="background:white;padding:2rem;border-radius:var(--radius-lg);box-shadow:0 10px 25px rgba(0,0,0,0.15);">
-      <div class="form-group">
-        <label for="nombre">Nombre completo</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Como aparece en la tarjeta" required>
+<section>
+  <div class="container">
+    <div style="max-width:600px;margin:3rem auto;background:white;padding:2.5rem;border-radius:var(--radius-lg);box-shadow:0 15px 40px rgba(0,0,0,0.15);">
+      <h3 class="section-title text-center">Resumen de tu Reserva</h3>
+
+      <div class="booking-summary" id="resumenReserva">
+        <!-- Los datos se cargarán con JS -->
       </div>
-      <div class="form-group">
-        <label for="tarjeta">Número de tarjeta</label>
-        <input type="text" id="tarjeta" name="tarjeta" placeholder="1234 5678 9012 3456" required>
-      </div>
-      <div class="form-row">
+
+      <form id="pagoForm">
+        <h3 class="section-title text-center">Datos de Pago</h3>
+        
         <div class="form-group">
-          <label for="mes">Mes de vencimiento</label>
-          <input type="text" id="mes" name="mes" placeholder="MM" required>
+          <label for="tarjeta">Número de Tarjeta</label>
+          <input type="text" id="tarjeta" name="tarjeta" placeholder="0000 0000 0000 0000" required>
         </div>
-        <div class="form-group">
-          <label for="anio">Año de vencimiento</label>
-          <input type="text" id="anio" name="anio" placeholder="AAAA" required>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fechaExp">Fecha Expiración</label>
+            <input type="month" id="fechaExp" name="fechaExp" required>
+          </div>
+          <div class="form-group">
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" name="cvv" placeholder="123" required>
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="cvv">CVV</label>
-        <input type="text" id="cvv" name="cvv" placeholder="123" required>
-      </div>
-      <button type="submit" class="btn btn-primary btn-large" style="width:100%;">Pagar Ahora</button>
-      <p style="text-align:center;margin-top:1rem;"><a href="iniciarsesion.html" style="color:var(--pacific-blue-600);">Volver a Iniciar Sesión</a></p>
-    </form>
+
+        <button type="submit" class="btn btn-primary btn-large" style="width:100%;">Pagar Anticipo</button>
+      </form>
+    </div>
   </div>
 </section>
 
@@ -80,6 +89,34 @@
   </div>
   <div class="footer-bottom">© 2025 Pacific Hotel. Todos los derechos reservados.</div>
 </footer>
+
+<script>
+  // Cargar datos de reserva desde sessionStorage
+  const reserva = JSON.parse(sessionStorage.getItem('reserva'));
+  const resumenDiv = document.getElementById('resumenReserva');
+
+  if(reserva) {
+    resumenDiv.innerHTML = `
+      <p><strong>Nombre:</strong> ${reserva.nombre}</p>
+      <p><strong>Email:</strong> ${reserva.email}</p>
+      <p><strong>Teléfono:</strong> ${reserva.telefono}</p>
+      <p><strong>Habitación:</strong> ${reserva.habitacion}</p>
+      <p><strong>Check-in:</strong> ${reserva.checkin}</p>
+      <p><strong>Check-out:</strong> ${reserva.checkout}</p>
+      <p><strong>Total Reserva:</strong> ${reserva.total}</p>
+      <p><strong>Anticipo (30%):</strong> ${reserva.anticipo}</p>
+    `;
+  } else {
+    resumenDiv.innerHTML = `<p>No se encontraron datos de reserva. <a href="reserva.html">Volver a reservar</a></p>`;
+  }
+
+  document.getElementById('pagoForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Pago realizado con éxito! Gracias por tu reserva.');
+    sessionStorage.removeItem('reserva'); // Limpiar la reserva
+    window.location.href = "index.html"; // Redirige a inicio
+  });
+</script>
 
 </body>
 </html>
